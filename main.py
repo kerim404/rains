@@ -20,7 +20,7 @@ async def send_discord_webhook(session: ClientSession, content: str) -> None:
   }
   
   try:
-    session.post(DISCORD_WEBHOOK_URL, json=payload)
+    await session.post(DISCORD_WEBHOOK_URL, json=payload)
   except:
     pass
 
@@ -40,7 +40,7 @@ async def monitor_website(browser, session: ClientSession, website: dict) -> Non
   while True:
     try:
       if tab is None:
-        tab = browser.get(website['url'])
+        tab = await browser.get(website['url'])
         
         await tab.sleep(5)
         
