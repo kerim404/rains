@@ -4,7 +4,7 @@ import aiohttp
 
 from aiohttp import ClientSession
 
-DISCORD_WEBHOOK_URL = "xyz"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1488512520749842524/lLl8IusI-Eqoa5MhKGEG2CP5AW-ksEQRFLnMEhbJJgRmx7psN2sj-ZsRZJ9bk74JRwMa"
 
 WATCHLIST = [
   {
