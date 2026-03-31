@@ -49,7 +49,7 @@ async def monitor_website(browser, session: ClientSession, website: dict) -> Non
       if found and not last_found_state:
         last_found_state = True
         
-        await send_discord_webhook(session, f"@everyone A rain just started on [{self.name}](<{self.url}>)")
+        await send_discord_webhook(session, f"@everyone A rain just started on [{website['name']}](<{website['url']}>)")
       elif not found and last_found_state:
         last_found_state = False
     except:
