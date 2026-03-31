@@ -49,7 +49,7 @@ async def monitor_website(browser, session: ClientSession, website: dict) -> Non
       if found and not last_found_state:
         last_found_state = True
         
-        await send_discord_webhook(session, f"@everyone A rain just started on [**{website['name']**]({website['url']).")
+        await send_discord_webhook(session, f"@everyone A rain just started on [{self.name}](<{self.url}>)")
       elif not found and last_found_state:
         last_found_state = False
     except:
@@ -58,11 +58,7 @@ async def monitor_website(browser, session: ClientSession, website: dict) -> Non
     await asyncio.sleep(30)
 
 async def start_browser():
-  start_kwargs = {
-    "headless": False
-  }
-  
-  browser = await nodriver.start(start_kwargs)
+  browser = await nodriver.start(headless=False)
   
   return browser
 
