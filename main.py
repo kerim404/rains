@@ -2,6 +2,8 @@ import asyncio
 import nodriver
 import aiohttp
 
+from aiohttp import ClientSession
+
 DISCORD_WEBHOOK_URL = "xyz"
 
 WATCHLIST = [
@@ -12,11 +14,14 @@ WATCHLIST = [
   }
 ]
 
-async def send_discord_webhook(content: str) -> None:
+async def send_discord_webhook(session: ClientSession, content: str) -> None:
   payload = {
     "content": content
   }
+  
   try:
-    async with 
+    session.post(DISCORD_WEBHOOK_URL, json=payload)
+  except:
+    pass
 
   
