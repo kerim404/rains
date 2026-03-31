@@ -75,6 +75,6 @@ async def run():
     await asyncio.gather(*tasks)
 
 if __name__ == "__main__":
-  nodriver.run_until_complete(run())
+  asyncio.run(run())
 
   
