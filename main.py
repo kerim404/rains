@@ -10,7 +10,7 @@ WATCHLIST = [
   {
     "name": "bandit.camp",
     "url": "https://bandit.camp",
-    "text": "placeholder"
+    "text": "i am boss"
   }
 ]
 
@@ -55,7 +55,7 @@ async def monitor_website(browser, session: ClientSession, website: dict) -> Non
     except:
       tab = None
       
-    await asyncio.sleep(30)
+    await asyncio.sleep(15)
 
 async def start_browser():
   browser = await nodriver.start(headless=False)
